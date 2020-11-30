@@ -1,12 +1,19 @@
 :root {
 	--black: #000000;
 	--gray: #a9a9a9;
+	--bg-color: #fafaff;
 
 	/* Font sizes */
 	--fs-xl: 3.6rem;
 	--fs-l: 1.8rem;
-	--fs-s: 1.4rem;
+	--fs-m: 1.4rem;
+	--fs-s: 1.2rem;
 	--fs-xs: 1rem;
+
+	/* Font families  */
+	--ff-primary: "Poppins", sans-serif;
+	--ff-secondary: "PT Serif", sans-serif;
+	--ff-tertiary: "Montserrat", sans-serif;
 }
 
 *,
@@ -24,17 +31,18 @@ body {
 	padding: 7em 0;
 	height: auto;
 	position: relative;
+	background-color: var(--bg-color);
+	font-family: var(--ff-primary);
 }
 
 h1 {
 	font-size: var(--fs-xl);
-	font-family: "PT Serif", sans-serif;
+	font-family: var(--ff-secondary);
 	margin-bottom: 1.5em;
 }
 
 h2 {
 	font-size: var(--fs-l);
-	font-family: "Poppins", sans-serif;
 	font-weight: 600;
 }
 
@@ -49,20 +57,19 @@ header {
 }
 
 .header-text {
-	font-size: var(--fs-s);
-	font-family: "Poppins", sans-serif;
+	font-size: var(--fs-m);
 	line-height: 1.5;
 }
 
 .container {
 	width: 90%;
-	max-width: 1020px;
+	max-width: 960px;
 	margin: 0 auto;
-	flex-wrap: wrap;
 }
 
 .img-gallery {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
 }
 
@@ -78,15 +85,14 @@ header {
 }
 
 .member-name {
-	font-family: "Poppins", sans-serif;
 	font-weight: 600;
-	font-size: var(--fs-s);
+	font-size: var(--fs-m);
 	margin-bottom: 0;
 }
 
 .member-position {
 	font-size: var(--fs-xs);
-	font-family: "PT Serif", sans-serif;
+	font-family: var(--ff-secondary);
 	white-space: nowrap;
 	writing-mode: vertical-lr;
 	margin-left: 0.5em;
@@ -97,8 +103,8 @@ header {
 	bottom: 20px;
 	left: 50%;
 	transform: translateX(-50%);
-	font-size: var(--fs-s);
-	font-family: "Montserrat", sans-serif;
+	font-size: var(--fs-m);
+	font-family: var(--ff-tertiary);
 	font-weight: 600;
 	color: var(--gray);
 }
@@ -106,4 +112,53 @@ header {
 .attribution-link {
 	text-decoration: none;
 	color: var(--gray);
+}
+
+/* =======================
+    MEDIA QUERIES
+======================= */
+
+@media (min-width: 1024px) {
+	.header {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		margin-bottom: 100px;
+	}
+
+	.header-subtitle {
+		width: 440px;
+	}
+
+	h1,
+	h2 {
+		margin-top: 0;
+	}
+
+	.member:nth-of-type(even) {
+		margin-top: 0;
+	}
+
+	.member:nth-of-type(2),
+	.member:nth-of-type(5) {
+		margin-top: 80px;
+	}
+}
+
+@media (min-width: 1336px) {
+	body {
+		padding-top: 10em;
+	}
+
+	h2,
+	.header-text {
+		font-size: var(--fs-l);
+	}
+	.member-name {
+		font-size: var(--fs-l);
+	}
+
+	.member-position {
+		font-size: var(--fs-s);
+	}
 }
