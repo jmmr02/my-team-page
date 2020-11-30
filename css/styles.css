@@ -1,5 +1,109 @@
+:root {
+	--black: #000000;
+	--gray: #a9a9a9;
+
+	/* Font sizes */
+	--fs-xl: 3.6rem;
+	--fs-l: 1.8rem;
+	--fs-s: 1.4rem;
+	--fs-xs: 1rem;
+}
+
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	/* Set the root font size to 10px for easier conversion to rem and em units  */
+	font-size: 62.5%;
+}
+
+body {
+	padding: 7em 0;
+	height: auto;
+	position: relative;
+}
+
+h1 {
+	font-size: var(--fs-xl);
+	font-family: "PT Serif", sans-serif;
+	margin-bottom: 1.5em;
+}
+
+h2 {
+	font-size: var(--fs-l);
+	font-family: "Poppins", sans-serif;
+	font-weight: 600;
+}
+
+img {
+	display: inline-block;
+	max-width: 100%;
+	height: auto;
+}
+
+header {
+	margin-bottom: 7em;
+}
+
+.header-text {
+	font-size: var(--fs-s);
+	font-family: "Poppins", sans-serif;
+	line-height: 1.5;
+}
+
+.container {
+	width: 90%;
+	max-width: 1020px;
+	margin: 0 auto;
+	flex-wrap: wrap;
+}
+
+.img-gallery {
+	display: flex;
+	justify-content: space-between;
+}
+
+.member {
+	width: 48%;
+	max-width: 300px;
+	display: flex;
+	margin-bottom: 60px;
+}
+
+.member:nth-child(even) {
+	margin-top: 40px;
+}
+
+.member-name {
+	font-family: "Poppins", sans-serif;
+	font-weight: 600;
+	font-size: var(--fs-s);
+	margin-bottom: 0;
+}
+
+.member-position {
+	font-size: var(--fs-xs);
+	font-family: "PT Serif", sans-serif;
+	white-space: nowrap;
+	writing-mode: vertical-lr;
+	margin-left: 0.5em;
+}
+
+.attribution {
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: var(--fs-s);
+	font-family: "Montserrat", sans-serif;
+	font-weight: 600;
+	color: var(--gray);
+}
+
+.attribution-link {
+	text-decoration: none;
+	color: var(--gray);
 }
